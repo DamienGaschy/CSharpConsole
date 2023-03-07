@@ -1,3 +1,6 @@
+using ProjetCSharp.Models.User;
+
+
 class Program
 {
 
@@ -14,6 +17,12 @@ class Program
         double tauxPrime = 0;
 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("\nQuel est votre Prénom : ");
+        string firstname = Console.ReadLine();
+        Console.WriteLine("\nQuel est votre Nom : ");
+        string lastname = Console.ReadLine();
+        Console.WriteLine("\nQuel est votre âge : ");
+        int old = int.Parse(Console.ReadLine());
         Console.WriteLine("Quel est votre Salaire annuel Brut : ");
         bool salaryInInt = int.TryParse(Console.ReadLine().Replace("€", ""), out int salary);
         Console.WriteLine("\nQuel est votre Taux d'imposition : ");
@@ -31,7 +40,10 @@ class Program
         {
             Console.WriteLine("La division ne peux pas être par 0");
         }
-        Console.WriteLine("\nVous avez un salaire de : " + salary + "€ Brut" + "\nImposable a " + taxes + "%" + "\n avec une prime de fin d'année de : " + tauxPrime + "%");
+        User user1 = new User(1, firstname, lastname, old, salary, taxes);
+        User user2 = new User(2, "Yanis", "Ezzannati", 18, 125, 95);
+
+        Console.WriteLine("\n" + user1.Firstname + " " + user1.LastName + " Vous avez un salaire de : " + salary + "€ Brut" + "\nImposable a " + taxes + "%" + "\n avec une prime de fin d'année de : " + tauxPrime + "%");
         double salaryNet = Math.Round(calculateSalary(salary, taxes), 2);
         Console.WriteLine("\nVous gagnez donc : " + salaryNet + "€ Net");
         switch (salary)
