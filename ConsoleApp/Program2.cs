@@ -1,7 +1,7 @@
 using ProjetCSharp.Models.User;
 
 
-class Program
+class Program2
 {
 
 
