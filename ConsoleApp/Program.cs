@@ -86,7 +86,21 @@
             else if (i == 11)
             {
                 float bonus = Float.TryParse(Console.ReadLine());
-                Console.WriteLine(Month[i] + " : " + ((salary / 11) + ((salary*bonus)/100)));
+                try
+                {
+                    Console.WriteLine(Month[i] + " : " + ((salary / 11) + ((salary * bonus) / 100)));
+                }
+                catch(FormatException) 
+                {
+                    Console.WriteLine("La prime n'est pas dans le bon format");
+                }
+                catch (Exception e)
+                {
+                    if (promotion == 0)
+                    {
+                        Console.WriteLine("La prime vaux 0");
+                    }
+                }
             }
             else
             {
