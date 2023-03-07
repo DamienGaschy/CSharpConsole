@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\flash\\Desktop\\cour\\CESI\\CSharp\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\flash\\Source\\Repos\\DamienGaschy\\CSharpConsole\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\flash\\Desktop\\cour\\CESI\\CSharp\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\flash\\Source\\Repos\\DamienGaschy\\CSharpConsole\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\flash\\Desktop\\cour\\CESI\\CSharp\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\flash\\Source\\Repos\\DamienGaschy\\CSharpConsole\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\flash\\Desktop\\cour\\CESI\\CSharp\\ConsoleApp\\ConsoleApp.csproj",
+        "projectPath": "C:\\Users\\flash\\Source\\Repos\\DamienGaschy\\CSharpConsole\\ConsoleApp\\ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\flash\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\flash\\Desktop\\cour\\CESI\\CSharp\\ConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\flash\\Source\\Repos\\DamienGaschy\\CSharpConsole\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

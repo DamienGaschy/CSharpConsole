@@ -7,7 +7,7 @@ class Programm
 
     static double Taxes(double salary, double taxe)
     {
-        return (salary * (1 - taxe / 100));
+        return (salary * (1-taxe/100));
     }
 
 
@@ -47,7 +47,7 @@ class Programm
                 case > 50000:
                     Console.WriteLine("T'es trop riche , fait des dons pour réduire tes impots !\n");
                     break;
-                case < (1500 * 12):
+                case < (1500*12):
                     Console.WriteLine("tkt mon reuf c'est la rue la vraie pour un alternant\n");
                     break;
                 case > 30000 when salary < 40000:
@@ -95,19 +95,19 @@ class Programm
                     Console.WriteLine(Months[i] + " : " + ((salary / 11) + ((salary * bonus) / 100)));
                     salaireNet = salaireNet + (((salary / 11) + ((salary * bonus) / 100)));
                 }
-                catch (FormatException)
+                catch(FormatException) 
                 {
                     Console.WriteLine("La prime n'est pas dans le bon format");
                 }
                 catch (Exception)
-                {
+                {                     
                     Console.WriteLine("La prime vaux 0");
                 }
             }
             else
             {
                 Console.WriteLine(Months[i] + " : " + (salary / 11));
-                salaireNet = salaireNet + (salary / 11);
+                salaireNet = salaireNet + (salary/11);
             }
         }
 
