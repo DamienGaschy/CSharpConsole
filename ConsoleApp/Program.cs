@@ -1,4 +1,6 @@
-﻿class Programm
+﻿using System.Transactions;
+
+class Programm
 {
 
     //Exercice 2
@@ -32,9 +34,9 @@
 
         //Exercice 2
 
-        string[] Month = new string[] { "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" };
+        string[] Months = new string[] { "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" };
         Console.WriteLine("Exercice 2\n\n");
-        Console.Write("Salaire : ");
+        Console.Write("Salaire brut : ");
 
         //Vérification salary
         bool salaryIsDouble = Double.TryParse(Console.ReadLine(), out double salary);
@@ -75,6 +77,7 @@
         Console.WriteLine("Salaire Brut : " + salary + " euros\nTaxe : " + taxe + " %");
         Console.WriteLine("");
         //Afficher mois (salaire)
+        double salaireNet = 0;
         for (int i = 0; i < 12; i++)
         {
             //Aout
@@ -85,32 +88,32 @@
             //Decembre
             else if (i == 11)
             {
-                float bonus = Float.TryParse(Console.ReadLine());
+                Console.Write("Prime de Décembre : ");
+                bool bonusIsDouble = Double.TryParse(Console.ReadLine(), out double bonus);
                 try
                 {
-                    Console.WriteLine(Month[i] + " : " + ((salary / 11) + ((salary * bonus) / 100)));
+                    Console.WriteLine(Months[i] + " : " + ((salary / 11) + ((salary * bonus) / 100)));
+                    salaireNet = salaireNet + (((salary / 11) + ((salary * bonus) / 100)));
                 }
                 catch(FormatException) 
                 {
                     Console.WriteLine("La prime n'est pas dans le bon format");
                 }
-                catch (Exception e)
-                {
-                    if (promotion == 0)
-                    {
-                        Console.WriteLine("La prime vaux 0");
-                    }
+                catch (Exception)
+                {                     
+                    Console.WriteLine("La prime vaux 0");
                 }
             }
             else
             {
-                Console.WriteLine(Month[i] + " : " + (salary / 11));
+                Console.WriteLine(Months[i] + " : " + (salary / 11));
+                salaireNet = salaireNet + (salary/11);
             }
         }
 
         //Fin
         salary = Taxes(salary, taxe);
-        Console.WriteLine("\nSalaire Net : " + salary + " euros");
+        Console.WriteLine("\nSalaire Net : " + salaireNet + " euros");
         Console.WriteLine("---------------------------------------------");
         Console.WriteLine("\nPressEnterKeyToExit");
         Console.ReadLine();
